@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yuki's Workshop</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Baloo+2&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="assets/logo_plain.png" alt="Yuki's Workshop logo" height="50">
+            <img src="assets/logo_plain.png" alt="Yuki's Workshop logo" height="50" />
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#howto">How to Order</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -27,46 +27,56 @@
 
     <section id="hero">
         <div class="hero-image">
-            <img src="assets/hero_sample.png" alt="Custom fumo plush sample">
+            <img src="assets/hero_sample.png" alt="Custom fumo plush sample" />
         </div>
         <h1>Bring Your Dream Fumo to Life!</h1>
         <p>Handmade with love, crafted to perfection.</p>
         <a href="#contact" class="cta-button">Commission Now</a>
     </section>
 
+    <div class="hero-transition"></div>
 
     <section id="about">
         <h2>About Yuki's Workshop</h2>
-        <p>I make custom fumo plushies designed to match your favorite characters or original ideas. Each one is
-            hand-crafted with care and attention to detail.</p>
+        <p>
+            I make custom fumo plushies designed to match your favorite characters or original ideas. Each one is
+            hand-crafted with care and attention to detail.
+        </p>
     </section>
 
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-            <!-- Cards will be rendered dynamically from gallery.json -->
+            <!-- Gallery cards rendered dynamically -->
         </div>
+
         <div id="lightbox" class="lightbox hidden">
+            <button id="lightbox-prev" class="nav-button nav-left">&#8592;</button>
+            <button id="lightbox-next" class="nav-button nav-right">&#8594;</button>
+
             <div class="lightbox-content two-column">
-              <span class="close">&times;</span>
-          
-              <div class="left-column">
-                <img id="lightbox-img" src="" alt="">
-                <div id="lightbox-thumbs" class="lightbox-thumbs"></div>
-                <h3 id="lightbox-title"></h3>
-                <p id="lightbox-description"></p>
-                <div id="lightbox-tags" class="lightbox-tags"></div>
-              </div>
-          
-              <div class="right-column">
-                <img id="lightbox-ref" class="reference-img" src="" alt="Reference Image">
-              </div>
+                <span class="close">&times;</span>
+
+                <div class="left-column">
+                    <img id="lightbox-img" src="" alt="Main Image" />
+                    <div id="lightbox-thumbs" class="lightbox-thumbs"></div>
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-description"></p>
+                    <div id="lightbox-tags" class="lightbox-tags"></div>
+                </div>
+
+                <div class="right-column">
+                    <img id="lightbox-ref" class="reference-img" src="" alt="Reference Image" />
+                </div>
             </div>
-          </div>
-          
-
-
+        </div>
     </section>
+
+
+
+
+
+
 
     <section id="howto">
         <h2>How to Order</h2>
@@ -78,21 +88,48 @@
         </div>
     </section>
 
+    <section id="shop">
+        <h2 class="shop-title">
+            <a href="https://ko-fi.com/yuki_workshop/shop" target="_blank" class="shop-link">
+                <img src="assets/kofi-icon.png" alt="Ko-fi" class="shop-icon large">
+                My Ko-fi Shop
+            </a>
+        </h2>
+
+        <div class="shop-grid" id="shop-grid"></div>
+    </section>
+    <section id="commission">
+        <h2>Custom Fumo Commissions</h2>
+        <p>I offer made-to-order custom fumos tailored to your favorite characters or OC designs.</p>
+        <p>To get started, please contact me directly:</p>
+        <div class="commission-links">
+            <a href="https://x.com/yuki_workshop" target="_blank" class="contact-button">
+                Contact via X
+            </a>
+        </div>
+    </section>
+
+
     <section id="contact">
         <h2>Contact Me</h2>
         <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
             <textarea placeholder="Describe your idea..."></textarea>
             <button type="submit">Submit</button>
         </form>
     </section>
 
     <footer>
+        <div class="socials">
+            <a href="https://x.com/yourhandle" target="_blank" aria-label="Twitter">
+                <img src="assets/x-icon.webp" alt="Twitter/X" height="24" />
+            </a>
+        </div>
         <p>&copy; 2025 Yuki's Workshop. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
