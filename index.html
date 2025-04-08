@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuki's Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Baloo+2&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo_plain.png" alt="Yuki's Workshop logo" height="50">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#howto">How to Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-image">
+            <img src="assets/hero_sample.png" alt="Custom fumo plush sample">
+        </div>
+        <h1>Bring Your Dream Fumo to Life!</h1>
+        <p>Handmade with love, crafted to perfection.</p>
+        <a href="#contact" class="cta-button">Commission Now</a>
+    </section>
+
+
+    <section id="about">
+        <h2>About Yuki's Workshop</h2>
+        <p>I make custom fumo plushies designed to match your favorite characters or original ideas. Each one is
+            hand-crafted with care and attention to detail.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Cards will be rendered dynamically from gallery.json -->
+        </div>
+        <div id="lightbox" class="lightbox hidden">
+            <div class="lightbox-content two-column">
+              <span class="close">&times;</span>
+          
+              <div class="left-column">
+                <img id="lightbox-img" src="" alt="">
+                <div id="lightbox-thumbs" class="lightbox-thumbs"></div>
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+                <div id="lightbox-tags" class="lightbox-tags"></div>
+              </div>
+          
+              <div class="right-column">
+                <img id="lightbox-ref" class="reference-img" src="" alt="Reference Image">
+              </div>
+            </div>
+          </div>
+          
+
+
+    </section>
+
+    <section id="howto">
+        <h2>How to Order</h2>
+        <div class="order-steps">
+            <div class="step">Send your idea</div>
+            <div class="step">Design discussion & quote</div>
+            <div class="step">Production</div>
+            <div class="step">Shipping</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Describe your idea..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Yuki's Workshop. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
