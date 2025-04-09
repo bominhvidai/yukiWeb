@@ -155,12 +155,39 @@ form button:hover {
 }
 
 footer {
-    text-align: center;
-    padding: 2rem 1rem;
     background-color: #f9f9f9;
+    padding: 2rem 1rem 1rem;
     font-size: 0.9rem;
     color: #888;
+    text-align: center;
 }
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #87CEFA;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #FFB6C1;
+}
+
+.footer-credit {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+
+
 
 .order-steps {
     display: flex;
@@ -245,13 +272,14 @@ form textarea {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* For Safari */    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
 }
 
 
@@ -268,6 +296,25 @@ form textarea {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
+}
+.lightbox-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lightbox-content::-webkit-scrollbar-track {
+    background: #f0f8ff;
+    border-radius: 10px;
+}
+
+.lightbox-content::-webkit-scrollbar-thumb {
+    background-color: #FFB6C1;
+    border-radius: 10px;
+    border: 2px solid #f0f8ff;
+}
+
+.lightbox-content {
+    scrollbar-width: thin;
+    scrollbar-color: #FFB6C1 #f0f8ff; /* Firefox */
 }
 
 .lightbox-content img,
@@ -304,8 +351,9 @@ form textarea {
     display: inline-block;
 }
 
+/* Fixed position for arrows relative to full screen */
 .nav-button {
-    position: absolute;
+    position: absolute; /* Back inside lightbox-content */
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.8);
@@ -314,10 +362,11 @@ form textarea {
     padding: 0.5rem 1rem;
     border-radius: 999px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 10;
     transition: background 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .nav-left {
     left: 1rem;
@@ -326,6 +375,7 @@ form textarea {
 .nav-right {
     right: 1rem;
 }
+
 
 .nav-button:hover {
     background: #f0f8ff;
@@ -378,6 +428,29 @@ form textarea {
     transform: scale(1.05);
     border-color: #87CEFA;
 }
+.lightbox-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1002;
+    pointer-events: none;
+}
+
+.lightbox-nav .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+}
+.lightbox-wrapper {
+    position: relative;
+    width: 90vw;
+    max-width: 900px;
+    height: 90vh;
+}
+
 
 .reference-section {
     margin-top: 1rem;
@@ -422,19 +495,6 @@ form textarea {
     margin-top: 0.5rem;
 }
 
-.socials {
-    margin-top: 1rem;
-}
-
-.socials img {
-    height: 24px;
-    margin: 0 0.5rem;
-    transition: transform 0.2s ease;
-}
-
-.socials img:hover {
-    transform: scale(1.1);
-}
 
 #shop {
     padding: 4rem 2rem;
@@ -583,3 +643,55 @@ form textarea {
     100% { transform: translateY(0); }
   }
   
+  #lightbox-img {
+    transition: opacity 0.4s ease;
+    opacity: 1;
+}
+
+#lightbox-img.fade-out {
+    opacity: 0;
+}
+.blur-placeholder {
+    filter: blur(20px);
+    transition: filter 0.4s ease;
+}
+.lightbox-thumbs img.selected {
+    border-color: #FFB6C1;
+    box-shadow: 0 0 0 2px #FFB6C1;
+}
+
+/* Scrollbar container */
+/* Fixed custom scrollbar position on full lightbox */
+.custom-scrollbar-track {
+    position: fixed;
+    top: 16.5%; /* centers the bar vertically */
+    right: 2rem;
+    width: 8px;
+    height: 66%; /* two-thirds of viewport */
+    background: #f0f8ff;
+    border-radius: 999px;
+    z-index: 1100;
+    pointer-events: none;
+}
+
+
+
+.custom-scrollbar-thumb {
+    background: #FFB6C1;
+    border-radius: 999px;
+    width: 100%;
+    height: 80px; /* was 40px — doubled for visibility */
+    transition: background 0.3s;
+    
+}
+
+.lightbox-content.two-column::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+.lightbox-content.two-column {
+    scrollbar-width: none;         /* Firefox */
+    -ms-overflow-style: none;      /* IE 10+ */
+    overflow-y: scroll;            /* Ensure scrolling works */
+}
+

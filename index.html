@@ -51,25 +51,38 @@
         </div>
 
         <div id="lightbox" class="lightbox hidden">
-            <button id="lightbox-prev" class="nav-button nav-left">&#8592;</button>
-            <button id="lightbox-next" class="nav-button nav-right">&#8594;</button>
+            <div class="lightbox-wrapper">
 
-            <div class="lightbox-content two-column">
-                <span class="close">&times;</span>
-
-                <div class="left-column">
-                    <img id="lightbox-img" src="" alt="Main Image" />
-                    <div id="lightbox-thumbs" class="lightbox-thumbs"></div>
-                    <h3 id="lightbox-title"></h3>
-                    <p id="lightbox-description"></p>
-                    <div id="lightbox-tags" class="lightbox-tags"></div>
+                <div class="lightbox-nav">
+                    <button id="lightbox-prev" class="nav-button nav-left">&#8592;</button>
+                    <button id="lightbox-next" class="nav-button nav-right">&#8594;</button>
                 </div>
+                <div class="lightbox-content two-column">
 
-                <div class="right-column">
-                    <img id="lightbox-ref" class="reference-img" src="" alt="Reference Image" />
+                    <span class="close">&times;</span>
+
+
+
+                    <div class="left-column">
+                        <img id="lightbox-img" src="" alt="Main Image" />
+                        <p id="lightbox-caption" class="lightbox-caption"></p>
+                        <div id="lightbox-thumbs" class="lightbox-thumbs"></div>
+                        <h3 id="lightbox-title"></h3>
+                        <p id="lightbox-description"></p>
+                        <div id="lightbox-tags" class="lightbox-tags"></div>
+                    </div>
+
+                    <div class="right-column">
+                        <img id="lightbox-ref" class="reference-img" src="" alt="Reference Image" />
+                    </div>
+                    <div class="custom-scrollbar-track">
+                        <div class="custom-scrollbar-thumb"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
+
     </section>
 
 
@@ -111,7 +124,7 @@
 
 
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2>Contact</h2>
         <form>
             <input type="text" placeholder="Your Name" required />
             <input type="email" placeholder="Your Email" required />
@@ -121,13 +134,17 @@
     </section>
 
     <footer>
-        <div class="socials">
-            <a href="https://x.com/yourhandle" target="_blank" aria-label="Twitter">
-                <img src="assets/x-icon.webp" alt="Twitter/X" height="24" />
-            </a>
+        <div class="footer-links">
+            <a href="#hero">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#howto">How to Order</a>
+            <a href="#contact">Contact</a>
         </div>
-        <p>&copy; 2025 Yuki's Workshop. All rights reserved.</p>
+        <p class="footer-credit">&copy; 2025 Yuki's Workshop. Handmade with love ♡</p>
     </footer>
+    
+    
+    
 
     <script src="script.js"></script>
 </body>
