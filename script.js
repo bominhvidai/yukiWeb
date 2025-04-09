@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Close lightbox
     document.querySelector('.close').addEventListener('click', () => {
         lightbox.classList.add('hidden');
+        document.body.style.overflow = ''; // restore scrolling
     });
 
     // Prev/Next buttons
