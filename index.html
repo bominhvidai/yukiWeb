@@ -46,9 +46,12 @@
 
     <section id="gallery">
         <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <!-- Gallery cards rendered dynamically -->
+        <div class="gallery-scrollbox">
+            <div class="gallery-grid">
+                <!-- Gallery cards rendered dynamically -->
+            </div>
         </div>
+        
 
         <div id="lightbox" class="lightbox hidden">
             <div class="lightbox-wrapper">
@@ -81,6 +84,7 @@
 
                 </div>
             </div>
+
         </div>
 
     </section>
@@ -109,8 +113,14 @@
             </a>
         </h2>
 
-        <div class="shop-grid" id="shop-grid"></div>
-    </section>
+        <div class="shop-carousel-wrapper">
+            <button class="shop-nav-button shop-nav-left">&#8249;</button>
+            <div class="shop-carousel" id="shop-grid">
+                <!-- Cards inserted here -->
+            </div>
+            <button class="shop-nav-button shop-nav-right">&#8250;</button>
+        </div>
+            </section>
     <section id="commission">
         <h2>Custom Fumo Commissions</h2>
         <p>I offer made-to-order custom fumos tailored to your favorite characters or OC designs.</p>

@@ -101,24 +101,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         const scrollable = document.querySelector('.lightbox-content.two-column');
         const track = document.querySelector('.custom-scrollbar-track');
         const thumb = document.querySelector('.custom-scrollbar-thumb');
-        
+
         function updateThumb() {
             const scrollTop = scrollable.scrollTop;
             const scrollHeight = scrollable.scrollHeight - scrollable.clientHeight;
             const percent = scrollTop / scrollHeight;
-        
+
             const trackHeight = track.clientHeight;
             const thumbHeight = thumb.offsetHeight;
             const top = percent * (trackHeight - thumbHeight);
-        
+
             thumb.style.transform = `translateY(${top}px)`;
         }
-        
+
         scrollable.addEventListener('scroll', updateThumb);
         setTimeout(updateThumb, 100); // Initial sync
 
-        
-        
+
+
     }
 
     // Build gallery cards
@@ -138,6 +138,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         card.appendChild(thumb);
         card.appendChild(label);
+
+        // Append to .gallery-grid inside the scrollbox
         galleryGrid.appendChild(card);
 
         card.addEventListener('click', () => {
@@ -145,6 +147,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             showLightboxEntry(currentEntryIndex);
         });
     });
+
 
     // Close lightbox
     document.querySelector('.close').addEventListener('click', () => {
@@ -214,5 +217,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.body.style.overflow = '';
         }
     });
+    const shopWrapper = document.querySelector('.shop-carousel-wrapper');
+    const shopTrack = document.getElementById('shop-grid');
 
+    const scrollAmount = 300;
+
+    shopWrapper.querySelector('.shop-nav-left').addEventListener('click', () => {
+        shopTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    shopWrapper.querySelector('.shop-nav-right').addEventListener('click', () => {
+        shopTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    
 });
