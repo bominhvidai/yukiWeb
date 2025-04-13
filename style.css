@@ -738,3 +738,9 @@ body {
 		flex: 0 0 90vw;
 	}
 }
+.gallery-card img {
+    transition: opacity 0.4s ease;
+}
+.gallery-card img.fade-out {
+    opacity: 0.4;
+}

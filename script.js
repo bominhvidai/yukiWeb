@@ -139,6 +139,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         card.appendChild(thumb);
         card.appendChild(label);
 
+        let hoverInterval;
+        let hoverIndex = 0;
+
+        card.addEventListener('mouseenter', () => {
+            hoverIndex = 0;
+            hoverInterval = setInterval(() => {
+                hoverIndex = (hoverIndex + 1) % entry.images.length;
+                thumb.classList.add('fade-out');
+                setTimeout(() => {
+                    thumb.src = entry.images[hoverIndex] || 'assets/alt.jpg';
+                    thumb.classList.remove('fade-out');
+                }, 150);
+
+            }, 1500); // change every 1.5s
+        });
+
+        card.addEventListener('mouseleave', () => {
+            clearInterval(hoverInterval);
+            hoverIndex = 0;
+            thumb.src = entry.images[0] || 'assets/alt.jpg';
+            thumb.classList.remove('fade-out');
+        });
+
+
         // Append to .gallery-grid inside the scrollbox
         galleryGrid.appendChild(card);
 
@@ -230,5 +254,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         shopTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
 
-    
+
 });
